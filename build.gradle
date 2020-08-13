@@ -1,6 +1,6 @@
 
 plugins {
-    id "org.jetbrains.intellij" version "0.4.10"
+    id "org.jetbrains.intellij" version "0.4.21"
     id "com.adarshr.test-logger" version "1.7.0"
     id "idea"
     id "java"
@@ -67,6 +67,26 @@ dependencies {
     compile 'org.apache.commons:commons-lang3:3.9'
     testCompile 'org.mockito:mockito-core:2.23.4'
     testCompile 'org.easytesting:fest-assert:1.4'
+}
+
+downloadRobotServerPlugin.version = '0.9.35'
+
+subprojects {
+    repositories {
+        mavenCentral()
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'org.jetbrains.intellij'
+
+    intellij {
+        version '2020.1'
+    }
+}
+
+wrapper {
+    gradleVersion = '6.3'
+    distributionUrl = "https://cache-redirector.jetbrains.com/services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
 
 group 'org.jboss.tools.intellij'

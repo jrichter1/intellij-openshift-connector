@@ -1,0 +1,10 @@
+pluginManagement {
+    repositories {
+        maven {
+            url 'https://cache-redirector.jetbrains.com/plugins.gradle.org'
+        }
+    }
+}
+
+rootProject.name = 'intellij-openshift-connector'
+include 'gui-tests'
